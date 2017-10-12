@@ -1,7 +1,6 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
-import axios from 'axios';
 import App from './App';
 import VueRouter from 'vue-router';
 import goods from './components/goods/goods.vue';
@@ -37,15 +36,3 @@ new Vue({
 
 // 默认打开商品tab
 router.push('/goods');
-
-const ERR_OK = 0;
-axios.get('api/seller')
-    .then(function (response) {
-      if (response.data.errno === ERR_OK) {
-        this.seller = response.data.data;
-        console.log(this.seller);
-      }
-    })
-    .catch(function (error) {
-      console.log(error);
-    });

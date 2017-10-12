@@ -1,6 +1,7 @@
 <template>
     <div id="app">
-        <v-header></v-header>
+        <!--:seller="seller" 传递给子组件-->
+        <v-header :seller="seller"></v-header>
         <div class="tab border-1px">
             <div class="tab-item">
                 <router-link to="/goods">商品</router-link>
@@ -17,14 +18,28 @@
     </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
   import header from './components/header/header.vue';
+  import axios from 'axios';
 
   export default {
     data: function () {
       return {
         seller: {}
       };
+    },
+    created: function () {
+      // 下面这行代码要添加，具体原因暂时不详
+        var _this = this;
+        const ERR_OK = 0;
+        axios.get('api/seller').then(function (response) {
+            if (response.data.errno === ERR_OK) {
+              _this.seller = response.data.data;
+//              console.log(_this.seller);
+            }
+          }).catch(function (error) {
+            console.log(error);
+          });
     },
     name: 'app',
     components: {
@@ -46,14 +61,12 @@
             text-align: center;
             &> a {
                 display: block;
-                font-size: 28px;
+                font-size: 14px;
                 color: rgb(77, 85, 93);
                 &.active{
                      color: rgb(240,20,20);
                  }
             }
-
         }
-
     }
 </style>
