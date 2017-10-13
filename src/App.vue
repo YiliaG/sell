@@ -14,11 +14,12 @@
             </div>
         </div>
         <!-- 路由匹配到的组件将渲染在这里 -->
-        <router-view></router-view>
+        <router-view :seller="seller"></router-view>
     </div>
 </template>
 
 <script type="text/ecmascript-6">
+//  import 'babel-polyfill';
   import header from './components/header/header.vue';
   import axios from 'axios';
 

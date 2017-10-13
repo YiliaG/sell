@@ -1,17 +1,131 @@
-.goods{
+.goods {
   display: flex;
   position: absolute;
-  top:176px;
+  top: 176px;
   bottom: 46px;
   left: 0;
-  width:100%;
+  width: 100%;
   overflow: hidden;
-  .menu-wrapper{
+  .menu-wrapper {
     flex: 0 0 80px;
-    width:80px;
+    width: 80px;
     background: #f3f5f7;
+    .menu-item {
+      display: table;
+      width: 56px;
+      height: 54px;
+      line-height: 14px;
+      padding: 0 12px;
+      &.current {
+        position: relative;
+        z-index: 10;
+        margin-top: -1px;
+        background-color: #fff;
+        font-weight: 700;
+      }
+      .text {
+        display: table-cell;
+        vertical-align: middle;
+        width: 56px;
+        font-size: 12px;
+        @include border-1px(rgba(7, 17, 27, 0.1));
+      }
+      .icon {
+        display: inline-block;
+        margin-right: 4px;
+        vertical-align: top;
+        &.decrease {
+          @include bg-image('decrease_3', 12px, 12px);
+        }
+        &.discount {
+          @include bg-image('discount_3', 12px, 12px);
+        }
+        &.guarantee {
+          @include bg-image('guarantee_3', 12px, 12px);
+        }
+        &.invoice {
+          @include bg-image('invoice_3', 12px, 12px);
+        }
+        &.special {
+          @include bg-image('special_3', 12px, 12px);
+        }
+      }
+    }
   }
-  .goods-wrapper{
+  .goods-wrapper {
+    flex: 1;
+    .title {
+      position: relative;
+      font-size: 12px;
+      color: rgb(147, 153, 159);
+      height: 26px;
+      line-height: 26px;
+      padding-left: 14px;
+      background-color: #f3f5f7;
+      &:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        height: 26px;
+        border-left: 2px solid #d9dde1;
+      }
+    }
+    .food-item {
+      display: flex;
+      margin: 18px;
+      padding-bottom: 18px;
+      @include border-1px(rgba(7, 17, 27, 0.1));
+      &:last-child {
+        margin-bottom: 0;
+        &:before {
+          display: none;
+        }
+      }
+      .icon {
+        flex: 0 0 57px;
+        margin-right: 10px;
+      }
+      .content {
+        flex: 1;
+        .name {
+          margin: 2px 0 8px 0;
+          font-size: 14px;
+          height: 14px;
+          line-height: 14px;
+          color: rgb(7, 17, 27);
+        }
+        .desc, .extra {
+          font-size: 10px;
+          color: rgb(147, 153, 159);
+        }
+        .desc {
+          margin: 8px 0;
+          line-height: 12px;
+        }
+        .extra {
+          line-height: 10px;
+          span {
+            display: inline-block;
+            margin-right: 12px;
+          }
+        }
+        .price {
+          margin-top: 8px;
+          font-weight: 700;
+          line-height: 24px;
+          .now {
+            font-size: 14px;
+            color: rgb(240, 20, 20);
+          }
+          .old {
+            text-decoration: line-through;
+            font-size: 10px;
+            color: rgb(147, 153, 159);
+          }
+        }
+      }
+    }
 
   }
 }
