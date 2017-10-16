@@ -29,10 +29,10 @@
           border-radius: 50%;
           text-align: center;
           background-color: #2b343c;
-          &.heightlight{
-            background-color:rgb(0,160,220) ;
+          &.heightlight {
+            background-color: rgb(0, 160, 220);
             color: #fff;
-            .icon-shopping_cart{
+            .icon-shopping_cart {
               color: #fff;
             }
           }
@@ -42,11 +42,11 @@
             color: #80858a;
           }
         }
-        .num{
+        .num {
           position: absolute;
-          top:0;
-          right:0;
-          width:24px;
+          top: 0;
+          right: 0;
+          width: 24px;
           height: 16px;
           line-height: 16px;
           text-align: center;
@@ -55,7 +55,7 @@
           font-weight: 700;
           color: #fff;
           background-color: #f01414;
-          box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
         }
       }
       .price {
@@ -69,7 +69,7 @@
         box-sizing: border-box;
         color: rgba(255, 255, 255, 0.4);
         border-right: 1px solid rgba(255, 255, 255, 0.1);
-        &.heightlight{
+        &.heightlight {
           color: #fff;
         }
       }
@@ -91,11 +91,11 @@
         line-height: 48px;
         font-weight: 700;
         font-size: 12px;
-        &.not-enough{
+        &.not-enough {
           color: rgba(255, 255, 255, 0.4);
           background-color: #2b343c;
         }
-        &.enough{
+        &.enough {
           color: #fff;
           background-color: #00b43c;
         }

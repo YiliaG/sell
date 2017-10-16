@@ -30,6 +30,9 @@
                                     <span class="now">¥{{food.price}}</span>
                                     <span v-show="food.oldPrice" class="old">¥{{food.oldPrice}}</span>
                                 </div>
+                                <div class="cartctrl-wrapper">
+                                    <cartCtrl :food="food"></cartCtrl>
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -44,6 +47,7 @@
   import axios from 'axios';
   import BScroll from 'better-scroll';
   import shopCart from '../../components/shopCart/shopCart.vue';
+  import cartCtrl from '../../components/cartCtrl/cartCtrl.vue';
 
   export default {
     props: {
@@ -96,6 +100,8 @@
           click: true
         });
         this.foodsScroll = new BScroll(this.$refs.goodsWrapper, {
+          // 该插件默认会阻止浏览器的原生 click 事件，设置去掉该阻止事件
+          click: true,
           // 实时监听滚动的位置 BScroll的参数设置
           probeType: 3
         });
@@ -123,7 +129,8 @@
     },
     components: {
       // 注册组件
-      shopCart
+      shopCart,
+      cartCtrl
     }
   };
 </script>
